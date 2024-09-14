@@ -2,7 +2,7 @@ import 'package:contactus/contactus.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -35,9 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // made an array for calling each class 'page' by the number of index
     const HomeScreen(),
     const ProfileScreen(),
-    Classes(),
+    const Classes(),
     const NutritionInfoPage(),
-    contactUs(),
+    const contactUs(),
   ];
 
   @override
@@ -102,25 +102,25 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.grey,
         body: ListView(
-          children: <Widget>[
+          children: const <Widget>[
             HomePageContent(
               txt: 'Welcome to Forward Fitness Club',
               txt2: 'Nutrition Facts',
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: SizedBox(
                 child: Text(
                     'Our mission is to help our clients meet their fitness and nutrition goals.'),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: SizedBox(
                   child: Text(
                       'We provide a FREE one-week membership so you can experience the benefits of our equipment and facility. This one-week trial gives you complete access to our equipment, training classes, and nutrition planning. Contact us today to start your free trial!')),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: SizedBox(
                 child: Text(
@@ -216,7 +216,7 @@ class ProfileScreen extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Colors.grey,
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               ListOfExercises(
                   description:
@@ -557,7 +557,8 @@ class NutritionInfoPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Nutrition()),
+                      MaterialPageRoute(
+                          builder: (context) => const Nutrition()),
                     );
                   },
                   child: Text(
